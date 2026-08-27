@@ -1,0 +1,10 @@
+{
+  "description": "Enables users to host interactive watch parties with personalized movie selections, real-time voting, spoiler-free chats, and detailed post-viewing insights.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
