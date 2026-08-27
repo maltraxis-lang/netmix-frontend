@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-nm-black: #0a0a0a;
+  --color-nm-surface: #141414;
+  --color-nm-card: #1c1c1c;
+  --color-nm-card2: #242424;
+  --color-nm-border: #2d2d2d;
+  --color-nm-red: #e50914;
+  --color-nm-red-dark: #b20710;
+  --color-nm-gold: #c9a84c;
+  --color-nm-text: #e5e5e5;
+  --color-nm-muted: #808080;
+  --color-nm-subtle: #404040;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: #141414;
+  color: #e5e5e5;
+  font-family: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #606060;
+}
+
+.font-display {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.star-btn:hover ~ .star-btn,
+.star-btn:hover {
+  color: #c9a84c;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.35s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+.live-dot::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #e50914;
+  border-radius: 50%;
+  animation: pulse-ring 1.2s infinite;
+  margin-left: 4px;
+}
